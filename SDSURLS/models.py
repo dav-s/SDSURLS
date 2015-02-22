@@ -1,1 +1,2 @@
-import sqlalchemy
+from sqlalchemy import Column, String
+
