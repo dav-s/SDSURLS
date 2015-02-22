@@ -25,6 +25,5 @@ import hooks
 app.add_sink(sinks.sink404)
 
 app.add_route("/{hash}/", rt.Hash())
-app.add_route("/l/", rt.Link())
 app.add_route("/", rt.Main())
 

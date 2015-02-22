@@ -1,4 +1,4 @@
-from sqlalchemy import Column, String, MetaData, Table
+from sqlalchemy import Column, String
 from sqlalchemy.orm import clear_mappers, mapper
 from SDSURLS import Base
 
