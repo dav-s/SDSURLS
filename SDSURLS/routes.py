@@ -6,9 +6,13 @@ from utils import to_hash
 
 class Main():
 
+    def __init__(self):
+        f = open("index.html")
+        self.index = f.read()
+
     def on_get(self, req, resp):
         resp.status = falcon.HTTP_200
-        resp.body = "Welcome to Unkier.com"+req.host
+        resp.body = self.index
 
     def on_post(self, req, resp):
         subd = req.get_param("subdomain")
