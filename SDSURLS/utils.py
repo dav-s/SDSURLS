@@ -1,3 +1,4 @@
+import re
 
 def to_hash(n):
     key = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
@@ -12,3 +13,9 @@ def to_hash(n):
 
     res = key[r] + res
     return res
+
+
+def fix_link(l):
+    if re.match(r"[a-zA-z]+://.+", l):
+        return l
+    return "http://"+l

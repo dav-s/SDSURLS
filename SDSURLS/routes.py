@@ -1,7 +1,7 @@
 import falcon
 from SDSURLS import subdomain_databases, session
 from config import subdomains
-from utils import to_hash
+from utils import to_hash, fix_link
 
 
 class Main():
@@ -21,6 +21,7 @@ class Main():
             resp.body = "That subdomain doesn't exist."
             return
         link = req.get_param("link")
+        link = fix_link(link)
         if len(link) > 512:
             resp.status = falcon.HTTP_500
             resp.body = "That link was too long."
