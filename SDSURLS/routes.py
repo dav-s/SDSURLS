@@ -27,7 +27,7 @@ class Main():
             resp.body = "That link was too long."
             return
         subd_obj = subdomain_databases[subdomains.index(subd)]
-        hash = to_hash(session.query(subd_obj).count()+1)
+        hash = to_hash(session.query(subd_obj).count())
         link_obj = subd_obj(hash=hash, link=link)
         session.add(link_obj)
         session.commit()
